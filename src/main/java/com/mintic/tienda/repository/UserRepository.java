@@ -41,4 +41,9 @@ public class UserRepository {
         return crudInterface.findByEmailAndPassword(email,password);
     }
 
+    public Optional<User> lastUserId(){
+        return crudInterface.findTopByOrderByIdDesc();
+    }
+
+
 }

@@ -56,7 +56,7 @@ public class UserController {
 
     /*Login de User*/
     @GetMapping("/{email}/{password}")
-    public User loginUser(@PathVariable String email, @PathVariable String password){
+    public User loginUser(@PathVariable("email") String email, @PathVariable("password") String password){
         return userService.loginUser(email, password);
     }
 
