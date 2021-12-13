@@ -35,8 +35,8 @@ public class OrderController {
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Order update(@RequestBody Order gadget) {
-        return orderService.update(gadget);
+    public Order update(@RequestBody Order order) {
+        return orderService.update(order);
     }
 
     @DeleteMapping("/{id}")
@@ -44,4 +44,30 @@ public class OrderController {
     public boolean delete(@PathVariable("id") int id) {
         return orderService.delete(id);
     }
+
+    //Metodo para ortener ordenes por zona
+    @GetMapping("/zona/{zone}")
+    public List<Order> orderByZone(@PathVariable("zone") String zone) {
+        return orderService.getOrderByZone(zone);
+    }
+
+    //Metodo para ortener ordenes por vendedor
+    @GetMapping("/salesman/{id}")
+    public List<Order> orderSalesmanById(@PathVariable("id") Integer id) {
+        return orderService.ordersSalesManById(id);
+    }
+
+    //Metodo para ortener ordenes por estado y asesor
+    @GetMapping("/salesman/{state}/{id}")
+    public List<Order> ordersSalesManByStateAndId(  @PathVariable("state") String state,@PathVariable("id") Integer id) {
+        return orderService.ordersSalesManByStateAndId(state,id);
+    }
+
+    //Reto 4: Ordenes de un asesor x fecha
+    @GetMapping("/date/{date}/{id}")
+    public List<Order> ordersSalesManByDate(@PathVariable("date") String dateStr, @PathVariable("id") Integer id) {
+        return orderService.ordersSalesManByDate(dateStr,id);
+    }
+
+
 }

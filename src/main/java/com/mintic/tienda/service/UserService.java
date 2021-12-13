@@ -77,6 +77,9 @@ public class UserService {
                 if (user.getPassword() != null){
                     userBD.get().setPassword(user.getPassword());
                 }
+                if(user.getType() != null){
+                    userBD.get().setType(user.getType());
+                }
                 if (user.getZone() != null){
                     userBD.get().setZone(user.getZone());
                 }

@@ -9,6 +9,7 @@ import java.util.Optional;
 
 public interface OrderCrudRepository extends MongoRepository<Order, Integer> {
 
+    List<Order> findBySalesManZone(String zone);
     @Query("{'salesMan.zone': ?0}")
     List<Order> findByZone(final String country);
 
