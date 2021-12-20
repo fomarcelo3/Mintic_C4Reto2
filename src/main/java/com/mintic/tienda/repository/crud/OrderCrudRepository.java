@@ -17,4 +17,6 @@ public interface OrderCrudRepository extends MongoRepository<Order, Integer> {
     List<Order> findByStatus(final String status);
 
     Optional<Order> findTopByOrderByIdDesc();
+    
+    List<Order> findByRegisterDayAndSalesMan(String fecha, Integer id);
 }
