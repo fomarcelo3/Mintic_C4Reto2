@@ -49,4 +49,14 @@ public class ClotheController {
         return clotheService.delete(reference);
     }
 
+    @GetMapping("/price/{price}")
+    public List<Clothe> getByPrice(@PathVariable Double price){
+        return clotheService.getFindByPrice(price);
+    }
+
+    @GetMapping("/description/{description}")
+    public List<Clothe> getByDescription(@PathVariable String description){
+        return clotheService.getByDescription(description);
+    }
+
 }

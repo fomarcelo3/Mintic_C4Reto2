@@ -45,5 +45,9 @@ public class UserRepository {
         return crudInterface.findTopByOrderByIdDesc();
     }
 
+    public List<User> getByMonthBirthday(String month){
+        return crudInterface.findByMonthBirthtDay(month);
+    }
+
 
 }

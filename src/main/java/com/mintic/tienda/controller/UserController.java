@@ -66,4 +66,12 @@ public class UserController {
         return userService.emailExists(email);
     }
 
+    /*Obtener listado de usuarios por mes de cumpleaños
+
+     */
+
+    @GetMapping("/birthday/{month}")
+    public List<User> getByMonthBirthday(@PathVariable String month){
+        return userService.getByMonthBirthday(month);
+    }
 }

@@ -71,4 +71,12 @@ public class ClotheService {
     }
 
 
+    public List<Clothe> getFindByPrice(double price){
+        return  clotheRepository.getByPrice(price);
+    }
+
+    public List<Clothe> getByDescription(String description){
+        return  clotheRepository.getBydescription(description);
+    }
+
 }
