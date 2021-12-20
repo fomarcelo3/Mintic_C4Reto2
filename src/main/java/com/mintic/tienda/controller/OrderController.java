@@ -58,7 +58,7 @@ public class OrderController {
     }
 
     //Metodo para ortener ordenes por estado y asesor
-    @GetMapping("/order/{state}/{id}")
+    @GetMapping("/{state}/{id}")
     public List<Order> ordersSalesManByStateAndId(  @PathVariable("state") String state,@PathVariable("id") Integer id) {
         return orderService.ordersSalesManByStateAndId(state,id);
     }
